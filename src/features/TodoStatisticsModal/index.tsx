@@ -8,7 +8,7 @@ import Modal from "../../components/Modal";
 import { filteredTodoListState, selectedDateState, todoListState } from "../TodoList/atom";
 import { getSimpleDateFormat } from "../../utils/date";
 
-const Container = styled.div`
+const ModalBody = styled.div`
 	width: 100vw;
 	max-width: 386px;
 	padding: 8px;
@@ -88,7 +88,7 @@ const TodoStatisticsModal: React.FC = () => {
 
 	return (
 		<Modal isOpen={isOpen} onClose={handleClose}>
-			<Container>
+			<ModalBody>
 				<Card>
 					<Date>{getSimpleDateFormat(selectedDate)}</Date>
 					<Statistics>할 일 {statistics.total - statistics.done}개 남음</Statistics>
@@ -105,7 +105,7 @@ const TodoStatisticsModal: React.FC = () => {
 						))}
 					</TodoList>
 				</Card>
-			</Container>
+			</ModalBody>
 		</Modal>
 	);
 };
